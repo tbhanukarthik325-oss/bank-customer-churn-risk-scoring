@@ -2,6 +2,13 @@
 
 A reproducible machine-learning project for estimating churn probability, exploring customer segments with interactive charts, explaining model behavior, and examining retention scenarios.
 
+## Project links
+
+- **Live Streamlit app:** https://bank-customer-churn-risk-scoring.streamlit.app/
+- **GitHub repository:** https://github.com/tbhanukarthik325-oss/bank-customer-churn-risk-scoring
+
+The deployed app asks you to upload the assignment CSV because the dataset is kept out of the public repository.
+
 ## Project status
 
 The assignment dataset is included locally as `data/European_Bank.csv` and is excluded from Git commits. You can also upload a CSV in the Streamlit app. Model metrics and feature importance are computed from a stratified holdout; they are not hard-coded.
@@ -48,9 +55,9 @@ The pipeline adds balance-to-salary ratio (with safe handling of zero salary), p
 
 ## Deliverables checklist
 
-- [ ] GitHub repository with source and setup instructions
+- [x] GitHub repository with source and setup instructions
 - [ ] Research paper with dataset provenance, EDA, evaluation, limitations, and retention recommendations
-- [ ] Deployed Streamlit application
+- [x] Deployed Streamlit application
 - [ ] Project explanation video
 - [ ] Internship experience and feedback video
 
