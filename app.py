@@ -66,9 +66,7 @@ def build_pipeline(features: pd.DataFrame, model_name: str) -> Pipeline:
     return Pipeline([("features", prep), ("model", model)])
 
 
-def load_data(upload):
-    if upload is not None:
-        return pd.read_csv(upload)
+def load_data():
     csv_path = APP_DIR / "data" / "European_Bank.csv"
     return pd.read_csv(csv_path) if csv_path.exists() else None
 
@@ -142,13 +140,13 @@ st.markdown("""
 
 with st.sidebar:
     st.header("Dashboard controls")
-    uploaded = st.file_uploader("Upload churn data (CSV)", type="csv")
+    st.caption("Dataset: European_Bank.csv · loaded automatically")
     model_name = st.selectbox("Scoring model", ["Random Forest", "Logistic Regression"])
     threshold = st.slider("Churn alert threshold", 0.05, 0.95, 0.50, 0.01)
 
-data = load_data(uploaded)
+data = load_data()
 if data is None:
-    st.info("Upload the assignment CSV or place European_Bank.csv in the data folder beside app.py.")
+    st.error("The bundled dataset is missing. Expected data/European_Bank.csv beside app.py.")
     st.stop()
 data.columns = data.columns.astype(str).str.strip()
 if TARGET not in data.columns:

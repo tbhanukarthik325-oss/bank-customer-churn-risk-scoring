@@ -7,11 +7,11 @@ A reproducible machine-learning project for estimating churn probability, explor
 - **Live Streamlit app:** https://bank-customer-churn-risk-scoring.streamlit.app/
 - **GitHub repository:** https://github.com/tbhanukarthik325-oss/bank-customer-churn-risk-scoring
 
-The deployed app asks you to upload the assignment CSV because the dataset is kept out of the public repository.
+The deployed app loads `data/European_Bank.csv` automatically from this public repository.
 
 ## Project status
 
-The assignment dataset is included locally as `data/European_Bank.csv` and is excluded from Git commits. You can also upload a CSV in the Streamlit app. Model metrics and feature importance are computed from a stratified holdout; they are not hard-coded.
+The assignment dataset is stored at `data/European_Bank.csv` and is included in this public repository for the deployed app to load automatically. Model metrics and feature importance are computed from a stratified holdout; they are not hard-coded.
 
 ## Project structure
 
@@ -47,7 +47,7 @@ pip install -r requirements.txt
 streamlit run app.py
 ```
 
-Use the app's upload control or the included `data/European_Bank.csv`. The app preprocesses data inside a scikit-learn pipeline, creates a stratified holdout, supports Logistic Regression and Random Forest, and refreshes threshold-dependent metrics and charts dynamically. Interactive tabs include portfolio KPIs, outcome mix, histograms, box/violin plots, segment churn bars, salary-balance scatterplots, treemaps, correlation heatmaps, ROC and precision-recall curves, calibration and threshold diagnostics, feature importance, a risk gauge, and a what-if scenario heatmap. Sidebar filters update descriptive charts; model diagnostics remain on the full holdout. Constant fields such as `Year` (2025 in this file), customer IDs, and surnames are excluded. The holdout metrics are the honest evaluation; the final refit is for scoring customer profiles.
+The app loads `data/European_Bank.csv` automatically and preprocesses data inside a scikit-learn pipeline. It creates a stratified holdout, supports Logistic Regression and Random Forest, and refreshes threshold-dependent metrics and charts dynamically. Interactive tabs include portfolio KPIs, outcome mix, histograms, box/violin plots, segment churn bars, salary-balance scatterplots, treemaps, correlation heatmaps, ROC and precision-recall curves, calibration and threshold diagnostics, feature importance, a risk gauge, and a what-if scenario heatmap. Sidebar filters update descriptive charts; model diagnostics remain on the full holdout. Constant fields such as `Year` (2025 in this file), customer IDs, and surnames are excluded. The holdout metrics are the honest evaluation; the final refit is for scoring customer profiles.
 
 ## Feature engineering
 
